@@ -1,0 +1,4 @@
+ (salt hash)←SaltAndHash pwd
+⍝ Return salt and hash for a new password
+ salt←⎕IO⊃makeSalt 1
+ hash←Hash salt pwd

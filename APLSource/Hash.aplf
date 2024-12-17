@@ -1,0 +1,2 @@
+ r←Hash (salt text)
+ r←⎕UCS SHA256.ComputeHash⊂⎕UCS salt,text

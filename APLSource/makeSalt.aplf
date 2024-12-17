@@ -1,0 +1,3 @@
+ r←makeSalt n;⎕IO
+ ⎕IO←0
+ r←↓⎕UCS?32+(n 16)⍴256-32
