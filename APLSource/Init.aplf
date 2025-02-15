@@ -1,7 +1,7 @@
  Init;⎕USING;dotnet;framework
  →(9=⎕NC'SHA256')⍴0
  ⎕RL←0 ⍝ Randomize
- (framework dotnet)←2 1=2250⌶0 
+ (framework dotnet)←2 1=2↑2250⌶⍬
  ⍝ Make functions available:
  ⍝ NewGuid             Return a new GUID (niladic)
  ⍝ SHA256.ComputeHash  Compute SHA265 of character vector
@@ -15,6 +15,6 @@
      'Init'SHA256.⎕NA'libconga33ssl64.so|nettle_sha256_init >I1[112]'
      'Update'SHA256.⎕NA'libconga33ssl64.so|nettle_sha256_update =I1[112] U8 <T1[]'
      'Digest'SHA256.⎕NA'libconga33ssl64.so|nettle_sha256_digest =I1[112] U8 >U1[32]'
-     SHA256.⎕FX'digest←ComputeHash data' 'data←⎕UCS⊃data' 'ctx←Init 112' 'ctx←Update ctx(⍴data)data' '(ctx digest)←Digest ctx 32 32'     
+     SHA256.⎕FX'digest←ComputeHash data' 'data←⎕UCS⊃data' 'ctx←Init 112' 'ctx←Update ctx(⍴data)data' '(ctx digest)←Digest ctx 32 32'
      NewGuid←newGuid
   :EndIf
